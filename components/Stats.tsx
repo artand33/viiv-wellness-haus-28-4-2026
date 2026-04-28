@@ -17,7 +17,11 @@ function useCountUp(target: number, inView: boolean) {
   return count;
 }
 
-const stats = [
+type StatItem =
+  | { numeric: number; suffix: string; label: string }
+  | { text: string; label: string };
+
+const stats: StatItem[] = [
   { numeric: 500, suffix: "+", label: "Happy Clients" },
   { numeric: 8,   suffix: "+", label: "Years Experience" },
   { text: "4.9★",              label: "Google Rating" },
